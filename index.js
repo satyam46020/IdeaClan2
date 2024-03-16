@@ -3,7 +3,7 @@ const { ApolloServer } = require('apollo-server-express');
 const typeDefs = require('./schema/schema.graphql');
 const resolvers = require('./resolvers/resolvers');
 const connectDB = require('./config/db'); 
-const authMiddleware = require('./config/auth');
+const { verifyToken } = require('./config/auth'); 
 
 connectDB;
 
@@ -11,8 +11,12 @@ const server = new ApolloServer({
   typeDefs,
   resolvers,
   context: ({ req }) => {
-    const user = authMiddleware(req);
-    return { user };
+    const token = req.headers.authorization || '';
+    if (token) {
+      const user = verifyToken(token);
+      return { user };
+    }
+    return {};
   },
 });
 
