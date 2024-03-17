@@ -4,7 +4,7 @@ const { generateToken } = require('../config/auth');
 
 const userResolver = {
   Mutation: {
-    signup: async (_, { username, email, password }) => {
+    signup: async (_, { username, email, password, role }) => {
       try {
         const existingUser = await User.findOne({ email });
         if (existingUser) {
@@ -17,7 +17,7 @@ const userResolver = {
           username,
           email,
           password: hashedPassword,
-          role: 'user',
+          role
         });
 
         await newUser.save();
