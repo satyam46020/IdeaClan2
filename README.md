@@ -51,22 +51,21 @@ npm run dev
 
 ## File Structure
 
-├── config/
-├──├── auth.js
-├──├── db.js
-├── models/
-├──├── Book.js
-├──├── User.js
-├── resolvers/
-├──├──bookResolver.js
-├──├──resolvers.js
-├──├──userResolver.js
-├── schemas/
-├──├──schema.graphql
-├── .env
-├── .gitignore
-├── package-lock.json
-├── package.json
+├── config/<br>
+├──├── auth.js<br>
+├──├── db.js<br>
+├── models/<br>
+├──├── Book.js<br>
+├──├── User.js<br>
+├── resolvers/<br>
+├──├──bookResolver.js<br>
+├──├──resolvers.js<br>
+├──├──userResolver.js<br>
+├── schemas/<br>
+├──├──schema.graphql<br>
+├── .gitignore<br>
+├── package-lock.json<br>
+├── package.json<br>
 ├── README.md
 
 
